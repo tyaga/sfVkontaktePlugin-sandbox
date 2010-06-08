@@ -1,0 +1,3 @@
+[submodule "plugins/sfVkontaktePlugin"]
+	path = plugins/sfVkontaktePlugin
+	url = git@github.com:tyaga/sfVkontaktePlugin.git
