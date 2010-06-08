@@ -7,4 +7,4 @@ all:
     param:
       dsn:      mysql:host=localhost;dbname=vkontakte_sandbox
       username: root
-      password: 
+      password: root

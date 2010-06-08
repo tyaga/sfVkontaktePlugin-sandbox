@@ -6,9 +6,12 @@
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_stylesheets() ?>
+	<? include_partial('sfVkontakteFetch/init_js_options')?>
     <?php include_javascripts() ?>
   </head>
   <body>
+  <? include_partial('sfVkontakteFetch/messages')?>
+  
     <?php echo $sf_content ?>
   </body>
 </html>

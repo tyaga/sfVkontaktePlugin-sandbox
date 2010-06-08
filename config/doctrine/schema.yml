@@ -1,0 +1,2 @@
+User:
+  actAs: [Timestampable, sfVkontakteApiUser]
