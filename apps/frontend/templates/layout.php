@@ -11,7 +11,9 @@
   </head>
   <body>
   <? include_partial('sfVkontakteFetch/messages')?>
-  
+
+  <div id="content">
     <?php echo $sf_content ?>
+  </div>
   </body>
 </html>
