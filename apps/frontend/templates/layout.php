@@ -24,12 +24,12 @@
 
 	<h2>Application successfully run!</h2>
 
-	<ul>
-		<li><a href="javascript:void(0);" onclick="main_tab();">Main page - show app.User properties</a></li>
-		<li><a href="javascript:void(0);" onclick="secure_tab();">Test secure method - send notification to yourself</a></li>
-		<li><a href="javascript:void(0);" onclick="activity_tab();">Test unsecure methods - retrieve and show your current activity status</a></li>
-		<li><a href="javascript:void(0);" onclick="image_tab();">Test image upload wrapper - send the image to the album</a></li>
-		<li><a href="javascript:void(0);" onclick="wall_tab();">Test wall post wrapper - post message and image to your friends walls</a></li>
+	<ul id="menu">
+		<li><a href="javascript:void(0);" onclick="main_tab();">Page</a></li>
+		<li><a href="javascript:void(0);" onclick="secure_tab();">Secure methods</a></li>
+		<li><a href="javascript:void(0);" onclick="activity_tab();">Unsecure methods</a></li>
+		<li><a href="javascript:void(0);" onclick="image_tab();">Upload image</a></li>
+		<li><a href="javascript:void(0);" onclick="wall_tab();">Wall post</a></li>
 	</ul>
 
     <?php echo $sf_content ?>
