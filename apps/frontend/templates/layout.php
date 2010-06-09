@@ -9,13 +9,31 @@
 
 	<? include_partial('sfVkontakteFetch/init_js_options')?>
 
+	<script language="javascript">
+		Urls = {
+			notice: '<?=url_for('main/notification')?>' 
+		};
+	</script>
+
 	<?php include_javascripts() ?>
   </head>
   <body>
   <? include_partial('sfVkontakteFetch/messages')?>
 
   <div id="content" style="display:none;">
+
+	<h2>Application successfully run!</h2>
+
+	<ul>
+		<li><a href="javascript:void(0);" onclick="main_tab();">Main page - show app.User properties</a></li>
+		<li><a href="javascript:void(0);" onclick="secure_tab();">Test secure method - send notification to yourself</a></li>
+		<li><a href="javascript:void(0);" onclick="activity_tab();">Test unsecure methods - retrieve and show your current activity status</a></li>
+		<li><a href="javascript:void(0);" onclick="image_tab();">Test image upload wrapper - send the image to the album</a></li>
+		<li><a href="javascript:void(0);" onclick="wall_tab();">Test wall post wrapper - post message and image to your friends walls</a></li>
+	</ul>
+
     <?php echo $sf_content ?>
+	  
   </div>
   </body>
 </html>
