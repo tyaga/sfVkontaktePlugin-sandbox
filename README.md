@@ -10,3 +10,5 @@ Then:
 *  Run ./symfony doctrine:build --all --and-load.
 
 Thats all! Open vkontakte application and you will see suggestion to set necessary options. After necessary options set, application will run.
+
+The instance of this code is running [here](http://vkontakte.ru/app1888805).

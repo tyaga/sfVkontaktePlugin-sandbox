@@ -6,13 +6,15 @@
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_stylesheets() ?>
+
 	<? include_partial('sfVkontakteFetch/init_js_options')?>
-    <?php include_javascripts() ?>
+
+	<?php include_javascripts() ?>
   </head>
   <body>
   <? include_partial('sfVkontakteFetch/messages')?>
 
-  <div id="content">
+  <div id="content" style="display:none;">
     <?php echo $sf_content ?>
   </div>
   </body>

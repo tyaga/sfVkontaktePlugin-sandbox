@@ -1,4 +1,4 @@
 <?php
 
-class myUser extends sfVkontakteUser {
+class myUser extends sfVkontakteSecurityUser {
 }

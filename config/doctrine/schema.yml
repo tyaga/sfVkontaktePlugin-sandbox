@@ -1,2 +1,8 @@
-User:
-  actAs: [Timestampable, sfVkontakteApiUser]
+#User:
+#  columns:
+#    vkontakte_user_id: integer
+#  relations:
+#    sfVkontakteUser:
+#      local: vkontakte_user_id
+#      foreign: id
+#      foreignType: one 
