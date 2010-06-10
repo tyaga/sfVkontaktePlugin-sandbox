@@ -22,7 +22,7 @@
 
   <div id="content" style="display:none;">
 
-	<h2>Application successfully run!</h2>
+	<h1>Application successfully run!</h1>
 
 	<ul id="menu">
 		<li><a href="javascript:void(0);" onclick="main_tab();">Page</a></li>

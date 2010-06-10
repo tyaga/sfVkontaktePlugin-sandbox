@@ -1,11 +1,15 @@
 body {
 	padding: 5px;
+	font-family:tahoma,verdana,arial,sans-serif,Lucida Sans;
+	font-size:11px;
 }
+
 #menu li {
 	padding-right: 10px;
 	float: left;
 	list-style-type:none;
 }
+
 #menu {
 	padding: 0 0 10px 0;
 	margin: 0px;
@@ -16,4 +20,14 @@ body {
 	margin-bottom: 10px;
 	font-size: 12px;
 	font-style:italic;
+}
+
+textarea {
+	width: 300px;
+	height: 150px;
+}
+
+#friends {
+	width:300px;
+	height:150px;
 }
