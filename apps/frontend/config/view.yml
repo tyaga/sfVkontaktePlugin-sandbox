@@ -16,7 +16,6 @@ default:
     - main.css
 
   javascripts:
-    - lib/jquery-1.4.2
     - main
     
 

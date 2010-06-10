@@ -15,6 +15,8 @@
 		};
 	</script>
 
+	<script type="text/javascript" src="/js/lib/jquery-1.4.2"></script>
+
 	<?php include_javascripts() ?>
   </head>
   <body>
