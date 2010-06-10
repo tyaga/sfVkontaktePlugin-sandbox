@@ -1,7 +1,7 @@
 <div id="main-tab" class="tab">
 	<h2>app.User properties</h2>
 
-	<div class="description">The app object has User property, that contains fetched from VK profile fields. Let's show them all!</div>
+	<div class="description">The app object has User property, that contains fetched from VK profile fields. Let's show some of them!</div>
 
 	<div id="userinfo">
 	</div>
@@ -54,22 +54,26 @@
 
 	<div class="description">The image is located on your server.</div>
 
-	<select id="friends" multiple="multiple">
-		<option value="<?=$vkontakteUser->id?>" selected="selected">You</option>
-		<? foreach($vkontakteUser->Friends as $friend ):?>
-			<option value="<?=$friend->id?>"><?=$friend->first_name . ' ' . $friend->last_name?></option>
-		<? endforeach;?>
-	</select><br/>
+	<?if (count($vkontakteUser->Friends)):?>
+		<select id="friends" multiple="multiple">
+			<option value="<?=$vkontakteUser->id?>" selected="selected">You</option>
+			<? foreach($vkontakteUser->Friends as $friend ):?>
+				<option value="<?=$friend->id?>"><?=$friend->first_name . ' ' . $friend->last_name?></option>
+			<? endforeach;?>
+		</select><br/>
 
-	Type message to post:<br/>
-	<textarea id="wall-message">sfVkontaktePlugin does work!!!</textarea><br/>
+		Type message to post:<br/>
+		<textarea id="wall-message">sfVkontaktePlugin does work!!!</textarea><br/>
 
-	<button onclick="send_walls()">Do send!</button>
+		<button onclick="send_walls()">Do send!</button>
 
-	<h3>Click image or button to start post!</h3>
+		<h3>Click image or button to start post!</h3>
 
-	<img src="/sfVkontaktePlugin/images/uploads/test_upload.jpg" id="fire-post-wall" style="cursor:pointer"/><br/>
+		<img src="/sfVkontaktePlugin/images/uploads/test_upload.jpg" id="fire-post-wall" style="cursor:pointer"/><br/>
 
-	<div id="wall-result" class="ajax-result">Result will appear here</div>
+		<div id="wall-result" class="ajax-result">Result will appear here</div>
+	<?else:?>
+		<h3>RELOAD PAGE TO SEE FETCHED FRIENDS!</h3>
+	<?endif;?>
 
 </div>

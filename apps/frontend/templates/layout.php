@@ -19,6 +19,7 @@
   </head>
   <body>
   <? include_partial('sfVkontakteFetch/messages')?>
+  <div id="loading"></div>
 
   <div id="content" style="display:none;">
 
