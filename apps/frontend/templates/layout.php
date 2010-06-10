@@ -15,7 +15,7 @@
 		};
 	</script>
 
-	<script type="text/javascript" src="/js/lib/jquery-1.4.2"></script>
+	<script type="text/javascript" src="/js/lib/jquery-1.4.2.js"></script>
 
 	<?php include_javascripts() ?>
   </head>
