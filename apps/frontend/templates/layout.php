@@ -15,8 +15,6 @@
 		};
 	</script>
 
-	<script type="text/javascript" src="/js/lib/jquery-1.4.2.js"></script>
-
 	<?php include_javascripts() ?>
   </head>
   <body>
@@ -27,11 +25,11 @@
 	<h1>Application successfully run!</h1>
 
 	<ul id="menu">
-		<li><a href="javascript:void(0);" onclick="main_tab();">Page</a></li>
-		<li><a href="javascript:void(0);" onclick="secure_tab();">Secure methods</a></li>
-		<li><a href="javascript:void(0);" onclick="activity_tab();">Unsecure methods</a></li>
-		<li><a href="javascript:void(0);" onclick="image_tab();">Upload image</a></li>
-		<li><a href="javascript:void(0);" onclick="wall_tab();">Wall post</a></li>
+		<li><a href="javascript:void(0);" onclick="main_tab();">User</a></li>
+		<li><a href="javascript:void(0);" onclick="secure_tab();">Secure</a></li>
+		<li><a href="javascript:void(0);" onclick="activity_tab();">Unsecure</a></li>
+		<li><a href="javascript:void(0);" onclick="image_tab();">Image</a></li>
+		<li><a href="javascript:void(0);" onclick="wall_tab();">Wall</a></li>
 	</ul>
 
     <?php echo $sf_content ?>

@@ -48,7 +48,7 @@ function image_tab() {
 	$('#image-tab').show();
 	// get your albums and fill select tag
 	VK.api('photos.getAlbums', {}, function(data){if (data.response){
-		str = '<option value="0">select the album:</option>';
+		str = '<option value="0">select the album</option>';
 		for (var i in data.response){
 			str = str + '<option value="' + data.response[i].aid + '">' + data.response[i].title + '</option>';
 		}
@@ -85,7 +85,7 @@ function wall_tab() {
 	$('.tab').hide();
 	$('#wall-tab').show();
 
-	$('#fire-upload-img').click(function(){
+	$('#fire-upload-wall').click(function(){
 		send_walls();
 	});
 	app.resizeWindow();

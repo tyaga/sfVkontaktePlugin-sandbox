@@ -1,7 +1,7 @@
 <div id="main-tab" class="tab">
 	<h2>app.User properties</h2>
 
-	<div class="description">The app object has User property, that contains fetched from VK profile fields. Let's show them!</div>
+	<div class="description">The app object has User property, that contains fetched from VK profile fields. Let's show them all!</div>
 
 	<div id="userinfo">
 	</div>
@@ -16,7 +16,7 @@
 	<textarea id="notice-message">It works!</textarea><br/>
 
 	<button onclick="send_notice()">Do send!</button><br/>
-	<div id="notice-result">Result will appear here</div>
+	<div id="notice-result" class="ajax-result">Result will appear here</div>
 
 </div>
 
@@ -25,13 +25,13 @@
 
 	<div class="description">Unsecure methods executes on the client side, by performing VK.api function call. Now you can see your current activity status.</div>
 
-	<div id="activity-result">Result will appear here</div>
+	<div id="activity-result" class="ajax-result">Result will appear here</div>
 </div>
 
 <div id="image-tab" class="tab">
 	<h2>Send the image to the album</h2>
 
-	<div class="description">Send the image to the album</div>
+	<div class="description">The image is located on your server.</div>
 
 	<select name="albums" id="albums"><option value="0">You have no albums, create one.</option></select><br/>
 
@@ -45,14 +45,14 @@
 	
 	<img src="/sfVkontaktePlugin/images/uploads/test_upload.jpg" id="fire-upload-img" style="cursor:pointer"/><br/>
 
-	<div id="image-result">Result will appear here</div>
+	<div id="image-result" class="ajax-result">Result will appear here</div>
 
 </div>
 
 <div id="wall-tab" class="tab">
 	<h2>Post message and image to your friends walls</h2>
 
-	<div class="description">Post message and image to your friends walls</div>
+	<div class="description">The image is located on your server.</div>
 
 	<select id="friends" multiple="multiple">
 		<option value="<?=$vkontakteUser->id?>" selected="selected">You</option>
@@ -70,6 +70,6 @@
 
 	<img src="/sfVkontaktePlugin/images/uploads/test_upload.jpg" id="fire-post-wall" style="cursor:pointer"/><br/>
 
-	<div id="wall-result">Result will appear here</div>
+	<div id="wall-result" class="ajax-result">Result will appear here</div>
 
 </div>
