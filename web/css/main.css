@@ -19,18 +19,6 @@ body {
 	opacity: 0;
 }
 
-#menu li {
-	padding-right: 10px;
-	float: left;
-	list-style-type:none;
-}
-
-#menu {
-	padding: 0 0 10px 0;
-	margin: 0px;
-	clear: both;
-}
-
 .description {
 	margin-bottom: 10px;
 	font-size: 12px;
@@ -50,4 +38,14 @@ textarea {
 .ajax-result {
 	padding-top: 10px;
 	color: #aa0000;
+}
+
+.fire-upload-img, .fire-post-wall {
+	cursor: pointer;
+}
+
+.ui-state-highlight {
+	width: 150px;
+	margin-top: 10px;
+	padding: 5px;
 }

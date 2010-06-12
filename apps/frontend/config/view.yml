@@ -14,9 +14,11 @@ default:
 
   stylesheets:
     - main.css
+    - "/css/smoothness/jquery-ui-1.8.2.custom.css"
 
   javascripts:
     - "/js/lib/jquery-1.4.2.js"
+    - "/js/lib/jquery-ui-1.8.2.custom.min.js"
     - main
     
 

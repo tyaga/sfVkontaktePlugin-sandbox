@@ -1,42 +1,42 @@
 DEBUG = true;
 $(function() {
+	init_loader();
 	show_loader();
 	app = new vkApp( function() {
-		init_loader();
-		$('#content').show();
-		main_tab();
+
+		$('#content').show().tabs({select: function(event, ui){
+			[main_tab, secure_tab, activity_tab, image_tab, wall_tab][ui.index]();
+			//tab_callbacks[ui.index]();
+			app.resizeWindow();
+		}});
 		hide_loader();
+
+		$('button').button();
+
+		main_tab();
+
 	}, { mandatory_settings: Settings.FRIENDS | Settings.NOTIFY | Settings.PHOTOS | Settings.STATUS } );
 });
 
 function main_tab() {
-	$('.tab').hide();
-	$('#main-tab').show();
-
 	$('#userinfo').html(
 		app.User.first_name + ' ' +
 		app.User.last_name	+ ' ' +
 		app.User.bdate + ' ' +
 		'<br/><img src="'+app.User.photo_big+'"/>');
-	app.resizeWindow();
 }
 /**
  * send notice functions
  */
 function secure_tab() {
-	$('.tab').hide();
-	$('#secure-tab').show();
-	app.resizeWindow();
-}
-function send_notice() {
-	$.get(Urls.notice, { 'message': $('#notice-message').val() }, send_notice_success);
+	$('.fire-notice').click(function(){
+		$.get(Urls.notice, { 'message': $('#notice-message').val() }, send_notice_success);
+	});
 }
 function send_notice_success(data) {
 	$('#notice-result').html(data);
 }
 function activity_tab() {
-	$('.tab').hide();
-	$('#activity-tab').show();
 	// get activity
 	show_loader();
 	VK.api('activity.get', {}, function(data){if (data.response){
@@ -48,11 +48,8 @@ function activity_tab() {
 				' <b>' + data.response.activity + '</b>' );
 		hide_loader();
 	}});
-	app.resizeWindow();
 }
 function image_tab() {
-	$('.tab').hide();
-	$('#image-tab').show();
 	// get your albums and fill select tag
 	show_loader();
 	VK.api('photos.getAlbums', {}, function(data){if (data.response){
@@ -73,7 +70,7 @@ function image_tab() {
 		else { $('#albums').show(); }
 	});
 	// onclick event - upload photo
-	$('#fire-upload-img').click(function(){
+	$('.fire-upload-img').click(function() {
 		show_loader();
 		var options = {};
 		// if album entered
@@ -90,34 +87,26 @@ function image_tab() {
 			$('#image-result').html('Image uploaded');
 		}, options);
 	})
-	app.resizeWindow();
 }
 function wall_tab() {
-	$('.tab').hide();
-	$('#wall-tab').show();
-
-	$('#fire-upload-wall').click(function(){
-		send_walls();
+	$('.fire-post-wall').click(function(){
+		show_loader();
+		var friend_ids = [];
+		$('#friends :selected').each(function(i, selected){
+			friend_ids.push($(selected).val());
+			log($(selected).val());
+		});
+		var options = {
+			uids: friend_ids,
+			message: $('#wall-message').val()
+		};
+		app.post_walls(function(){
+			hide_loader();
+			$('#wall-result').html('Walls updated');
+		}, options);
 	});
-	app.resizeWindow();
 }
 
-function send_walls() {
-	show_loader();
-	var friend_ids = [];
-	$('#friends :selected').each(function(i, selected){
-		friend_ids.push($(selected).val());
-		log($(selected).val());
-	});
-	var options = {
-		uids: friend_ids,
-		message: $('#wall-message').val()
-	};
-	app.post_walls(function(){
-		hide_loader();
-		$('#wall-result').html('Walls updated');
-	}, options);
-}
 function show_loader(){
 	$("#loading").width($(document.body).innerWidth()).height($(document.body).innerHeight()).css({display: 'block'}).animate({'opacity': 0.7}, 'fast');
 }

@@ -21,17 +21,9 @@
   <? include_partial('sfVkontakteFetch/messages')?>
   <div id="loading"></div>
 
+  <h1>sfVkontaktePlugin</h1>
+
   <div id="content" style="display:none;">
-
-	<h1>Application successfully run!</h1>
-
-	<ul id="menu">
-		<li><a href="javascript:void(0);" onclick="main_tab();">User</a></li>
-		<li><a href="javascript:void(0);" onclick="secure_tab();">Secure</a></li>
-		<li><a href="javascript:void(0);" onclick="activity_tab();">Unsecure</a></li>
-		<li><a href="javascript:void(0);" onclick="image_tab();">Image</a></li>
-		<li><a href="javascript:void(0);" onclick="wall_tab();">Wall</a></li>
-	</ul>
 
     <?php echo $sf_content ?>
 	  
