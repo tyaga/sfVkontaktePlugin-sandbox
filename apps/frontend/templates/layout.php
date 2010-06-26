@@ -7,18 +7,18 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_stylesheets() ?>
 
-	<? include_partial('sfVkontakteFetch/init_js_options')?>
+	<?php include_partial('sfVkontakteFetch/init_js_options')?>
 
 	<script language="javascript">
 		Urls = {
-			notice: '<?=url_for('main/notification')?>' 
+			notice: '<?php echo url_for('main/notification')?>'
 		};
 	</script>
 
 	<?php include_javascripts() ?>
   </head>
   <body>
-  <? include_partial('sfVkontakteFetch/messages')?>
+  <?php include_partial('sfVkontakteFetch/messages')?>
   <div id="loading"></div>
 
   <h1>sfVkontaktePlugin</h1>

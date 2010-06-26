@@ -1,4 +1,4 @@
-<?
+<?php
 class mainActions extends sfVkontakteActions {
 
 	public function executeIndex(sfWebRequest $request) {

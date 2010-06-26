@@ -65,12 +65,12 @@
 
 	<div class="description">The image is located on your server.</div>
 
-	<?if (count($vkontakteUser->Friends)):?>
+	<?php if (count($vkontakteUser->Friends)):?>
 		<select id="friends" multiple="multiple">
-			<option value="<?=$vkontakteUser->id?>" selected="selected">You</option>
-			<? foreach($vkontakteUser->Friends as $friend ):?>
-				<option value="<?=$friend->id?>"><?=$friend->first_name . ' ' . $friend->last_name?></option>
-			<? endforeach;?>
+			<option value="<?php echo $vkontakteUser->id?>" selected="selected">You</option>
+			<?php foreach($vkontakteUser->Friends as $friend ):?>
+				<option value="<?php echo $friend->id?>"><?php echo $friend->first_name . ' ' . $friend->last_name?></option>
+			<?php endforeach;?>
 		</select><br/>
 
 		Type message to post:<br/>
@@ -83,9 +83,9 @@
 		<img src="/sfVkontaktePlugin/images/uploads/test_upload.jpg" class="fire-post-wall"/><br/>
 
 		<div id="wall-result" class="ui-state-highlight">Result will appear here</div>
-	<?else:?>
+	<?php else:?>
 		<h3>RELOAD PAGE TO SEE FETCHED FRIENDS!</h3>
-	<?endif;?>
+	<?php endif;?>
 
 </div>
 
